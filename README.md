@@ -19,15 +19,15 @@ AI Research Intelligence Platform
 
 ## 📸 Platform Preview
 <p align="center">
-  <img src="assets/screenshots/ss4.png" width="45%" />
-  <img src="assets/screenshots/ss3.png" width="45%" />
+  <img src="screenshots/ss4.png" width="45%" />
+  <img src="screenshots/ss3.png" width="45%" />
 </p>
 <p align="center">
-  <img src="assets/screenshots/ss5.png" width="45%" />
-  <img src="assets/screenshots/ss2.png" width="45%" />
+  <img src="screenshots/ss5.png" width="45%" />
+  <img src="screenshots/ss2.png" width="45%" />
 </p>
 <p align="center">
-  <img src="assets/screenshots/ss1.png" width="91%" />
+  <img src="screenshots/ss1.png" width="91%" />
 </p>
 
 ---
