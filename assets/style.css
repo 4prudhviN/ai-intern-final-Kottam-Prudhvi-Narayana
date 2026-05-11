@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Background */
+/* Global Styles */
 [data-testid="stAppViewContainer"] {
     background: linear-gradient(145deg, #0a0a0f, #0d1117, #0f1923);
     font-family: 'Inter', sans-serif;
@@ -14,142 +14,57 @@
 
 [data-testid="stSidebar"] {
     background: rgba(10, 12, 20, 0.95);
-    border-right: 1px solid rgba(99, 102, 241, 0.15);
 }
 
-.block-container {
-    padding-top: 2rem;
-    max-width: 1200px;
+/* Force ALL Text in Sidebar to be visible */
+[data-testid="stSidebar"] p, 
+[data-testid="stSidebar"] span, 
+[data-testid="stSidebar"] label, 
+[data-testid="stSidebar"] div {
+    color: #FFFFFF !important;
 }
 
-/* Typography */
-h1, h2, h3 {
-    color: white !important;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
+/* Protect the Expander Header (which has a light background) */
+div[data-testid="stExpander"] p {
+    color: #1e293b !important;
 }
 
-p, li, span, label {
-    color: #E2E8F0;
-    font-family: 'Inter', sans-serif;
-}
-
-/* Fix for Selectbox Dropdown Visibility */
-div[data-baseweb="popover"] ul {
-    background-color: #1e293b !important;
-}
-
+/* Selectbox Dropdown Fix */
 div[data-baseweb="popover"] li {
-    color: #f8fafc !important;
+    color: #1e293b !important;
+}
+div[data-baseweb="popover"] ul {
+    background-color: white !important;
 }
 
-div[data-baseweb="popover"] li:hover {
-    background-color: #334155 !important;
+/* Guaranteed Visibility Status Boxes */
+.status-box {
+    background-color: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF !important;
+    font-weight: 600;
 }
 
-/* Main CTA Button */
+.status-icon {
+    color: #22c55e;
+    font-size: 1.2rem;
+}
+
+/* Main UI Typography */
+h1, h2, h3 { color: white !important; }
+.stMarkdown p, .stMarkdown li { color: #E2E8F0 !important; }
+
+/* Buttons */
 .stButton > button {
     background: linear-gradient(135deg, #0ea5e9, #06b6d4);
     color: white;
     border-radius: 12px;
-    border: none;
     padding: 12px 28px;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-    letter-spacing: 0.3px;
-}
-
-.stButton > button:hover {
-    background: linear-gradient(135deg, #0284c7, #0891b2);
-    box-shadow: 0 0 28px rgba(14, 165, 233, 0.45);
-    transform: translateY(-1px);
-}
-
-/* Download Buttons */
-.stDownloadButton > button {
-    background: linear-gradient(135deg, #059669, #0d9488);
-    color: white;
-    border-radius: 12px;
-    border: none;
-    font-weight: 600;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-}
-
-.stDownloadButton > button:hover {
-    background: linear-gradient(135deg, #047857, #0f766e);
-    box-shadow: 0 0 20px rgba(5, 150, 105, 0.35);
-    transform: translateY(-1px);
-}
-
-/* Input Fields */
-input[type="text"], textarea {
-    background-color: rgba(15, 23, 42, 0.7) !important;
-    color: #E2E8F0 !important;
-    border: 1px solid rgba(99, 102, 241, 0.25) !important;
-    border-radius: 12px !important;
-    font-family: 'Inter', sans-serif !important;
-}
-
-/* Selectbox */
-div[data-baseweb="select"] > div {
-    background-color: rgba(15, 23, 42, 0.7) !important;
-    border: 1px solid rgba(99, 102, 241, 0.25) !important;
-    border-radius: 12px !important;
-    color: #E2E8F0 !important;
-}
-
-/* Progress bar */
-div[data-testid="stProgressBar"] > div > div {
-    background: linear-gradient(90deg, #0ea5e9, #06b6d4) !important;
-    border-radius: 99px;
-}
-
-/* Tabs */
-button[data-baseweb="tab"] {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 500 !important;
-    color: #94a3b8 !important;
-}
-
-button[data-baseweb="tab"][aria-selected="true"] {
-    color: #38bdf8 !important;
-    border-bottom-color: #38bdf8 !important;
-}
-
-/* Divider */
-hr { border-color: rgba(99, 102, 241, 0.12) !important; }
-
-/* Code blocks */
-.stCode, code {
-    background: rgba(15, 23, 42, 0.8) !important;
-    border: 1px solid rgba(99, 102, 241, 0.15) !important;
-    border-radius: 10px !important;
-    color: #7dd3fc !important;
-}
-
-/* Metric cards */
-div[data-testid="stMetric"] {
-    background: linear-gradient(135deg, rgba(14,165,233,0.07), rgba(6,182,212,0.07));
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid rgba(14, 165, 233, 0.18);
-    backdrop-filter: blur(12px);
-    transition: all 0.3s ease;
-}
-
-div[data-testid="stMetric"]:hover {
-    border: 1px solid rgba(14, 165, 233, 0.35);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.12);
-}
-
-img {
-    filter: drop-shadow(0 0 12px rgba(14, 165, 233, 0.4));
 }

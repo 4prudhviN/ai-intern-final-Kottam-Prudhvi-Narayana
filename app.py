@@ -29,7 +29,8 @@ logo = Image.open("assets/logo.png")
 def local_css(file_name):
     if os.path.exists(file_name):
         with open(file_name) as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+            # Use a unique ID to force the browser to re-evaluate the style block
+            st.markdown(f"<style id='custom-css'>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("assets/style.css")
 
@@ -65,10 +66,10 @@ with st.sidebar:
 
     # Agent Status
     with st.expander("✅ System Status", expanded=True):
-        st.success("Research Agent: Ready")
-        st.success("Trend Agent: Ready")
-        st.success("Summary Agent: Ready")
-        st.success("Storage: Connected")
+        st.markdown('<div class="status-box"><span class="status-icon">✓</span> Research Agent: Ready</div>', unsafe_allow_html=True)
+        st.markdown('<div class="status-box"><span class="status-icon">✓</span> Trend Agent: Ready</div>', unsafe_allow_html=True)
+        st.markdown('<div class="status-box"><span class="status-icon">✓</span> Summary Agent: Ready</div>', unsafe_allow_html=True)
+        st.markdown('<div class="status-box"><span class="status-icon">✓</span> Storage: Connected</div>', unsafe_allow_html=True)
 
     st.divider()
 

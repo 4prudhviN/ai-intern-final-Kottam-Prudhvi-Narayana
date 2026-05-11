@@ -12,6 +12,11 @@ AI Research Intelligence Platform
 ![MCP](https://img.shields.io/badge/Storage-MCP%20File%20System-green?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
 
+## 📺 Platform Demo
+[**Watch the Demo Video**](demo_video.mp4) — A 2-3 minute walkthrough of the multi-agent research pipeline in action.
+
+---
+
 A professional, enterprise-grade AI research platform powered by a multi-agent pipeline. Generates structured intelligence reports with source attribution, analytics, and professional PDF/TXT export.
 
 ---
