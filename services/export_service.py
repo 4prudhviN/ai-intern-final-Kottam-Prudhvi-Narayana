@@ -18,15 +18,21 @@ def export_txt(content: str):
 
 
 def clean_line(text: str) -> str:
-    """Sanitize a single line: strip non-latin-1 chars and break long tokens."""
-    safe = text.encode("latin-1", errors="replace").decode("latin-1")
+    """Sanitize a single line: strip non-latin-1 chars, remove bold tags, and break long tokens."""
+    # Remove markdown bold tags
+    text = text.replace("**", "")
+    
+    try:
+        safe = text.encode("latin-1", errors="replace").decode("latin-1")
+    except:
+        safe = text
+        
     words = safe.split(" ")
     broken = []
     for word in words:
-        # Break tokens longer than 60 chars with a space every 60 chars
-        if len(word) > 60:
-            chunks = [word[i:i+60] for i in range(0, len(word), 60)]
-            broken.append(" ".join(chunks))
+        if len(word) > 50:
+            chunks = [word[i:i+50] for i in range(0, len(word), 50)]
+            broken.append("- ".join(chunks))
         else:
             broken.append(word)
     return " ".join(broken)
@@ -63,10 +69,12 @@ class PDF(FPDF):
         self.cell(self.usable_width, 10, f"Page {self.page_no()} | AI Research Intelligence Platform", align="C")
 
     def write_line(self, text: str, font_style: str, font_size: int, color: tuple, line_height: int):
+        self.set_x(LEFT_MARGIN)
         self.set_font("Arial", font_style, font_size)
         self.set_text_color(*color)
         safe = clean_line(text)
         self.multi_cell(self.usable_width, line_height, safe)
+        self.ln(1) # Extra spacing between elements
 
 
 def export_pdf(content: str):
@@ -78,32 +86,34 @@ def export_pdf(content: str):
 
     for raw_line in content.split("\n"):
         stripped = raw_line.strip()
+        
+        if not stripped:
+            pdf.ln(2)
+            continue
 
         if stripped.startswith("# ") and not stripped.startswith("## "):
-            pdf.write_line(stripped[2:], "B", 15, (20, 20, 20), 10)
-            pdf.ln(2)
+            pdf.ln(1)
+            pdf.write_line(stripped[2:], "B", 14, (20, 20, 20), 9)
+            pdf.ln(1)
 
         elif stripped.startswith("## "):
-            pdf.write_line(stripped[3:], "B", 12, (40, 40, 40), 8)
+            pdf.write_line(stripped[3:], "B", 11, (40, 40, 40), 8)
             pdf.ln(1)
 
         elif stripped.startswith("- ") or stripped.startswith("* "):
-            pdf.write_line("  \u2022 " + stripped[2:], "", 10, (60, 60, 60), 7)
+            pdf.write_line("  \u2022 " + stripped[2:], "", 10, (50, 50, 50), 7)
 
         elif stripped.startswith("*") and stripped.endswith("*") and len(stripped) > 2:
-            pdf.write_line(stripped.strip("*"), "I", 9, (120, 120, 120), 6)
+            pdf.write_line(stripped.strip("*"), "I", 9, (100, 100, 100), 6)
 
         elif stripped == "---":
+            pdf.ln(1)
             pdf.set_draw_color(200, 200, 200)
-            pdf.set_line_width(0.3)
             pdf.line(pdf.l_margin, pdf.get_y(), pdf.w - pdf.r_margin, pdf.get_y())
-            pdf.ln(4)
-
-        elif stripped == "":
             pdf.ln(3)
 
         else:
-            pdf.write_line(stripped, "", 10, (50, 50, 50), 7)
+            pdf.write_line(stripped, "", 10, (40, 40, 40), 7)
 
     pdf.output(pdf_path)
     return pdf_path
