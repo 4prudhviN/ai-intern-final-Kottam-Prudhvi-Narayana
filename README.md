@@ -17,6 +17,21 @@ AI Research Intelligence Platform
 
 ---
 
+## 📸 Platform Preview
+<p align="center">
+  <img src="assets/screenshots/ss4.png" width="45%" />
+  <img src="assets/screenshots/ss3.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/screenshots/ss5.png" width="45%" />
+  <img src="assets/screenshots/ss2.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/screenshots/ss1.png" width="91%" />
+</p>
+
+---
+
 A professional, enterprise-grade AI research platform powered by a multi-agent pipeline. Generates structured intelligence reports with source attribution, analytics, and professional PDF/TXT export.
 
 ---
