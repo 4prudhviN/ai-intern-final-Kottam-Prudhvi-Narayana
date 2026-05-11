@@ -1,0 +1,8 @@
+streamlit
+groq
+python-dotenv
+fpdf2
+pandas
+loguru
+mcp
+uvicorn

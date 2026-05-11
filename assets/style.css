@@ -1,0 +1,142 @@
+/* ============================================
+   AI Research Platform — Premium Design System
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Background */
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(145deg, #0a0a0f, #0d1117, #0f1923);
+    font-family: 'Inter', sans-serif;
+}
+
+[data-testid="stHeader"] { background: transparent; }
+
+[data-testid="stSidebar"] {
+    background: rgba(10, 12, 20, 0.95);
+    border-right: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.block-container {
+    padding-top: 2rem;
+    max-width: 1200px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: white !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+p, li, span, label, div {
+    color: #E2E8F0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Main CTA Button */
+.stButton > button {
+    background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    padding: 12px 28px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #0284c7, #0891b2);
+    box-shadow: 0 0 28px rgba(14, 165, 233, 0.45);
+    transform: translateY(-1px);
+}
+
+/* Download Buttons */
+.stDownloadButton > button {
+    background: linear-gradient(135deg, #059669, #0d9488);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.stDownloadButton > button:hover {
+    background: linear-gradient(135deg, #047857, #0f766e);
+    box-shadow: 0 0 20px rgba(5, 150, 105, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Input Fields */
+input[type="text"], textarea {
+    background-color: rgba(15, 23, 42, 0.7) !important;
+    color: #E2E8F0 !important;
+    border: 1px solid rgba(99, 102, 241, 0.25) !important;
+    border-radius: 12px !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Selectbox */
+div[data-baseweb="select"] > div {
+    background-color: rgba(15, 23, 42, 0.7) !important;
+    border: 1px solid rgba(99, 102, 241, 0.25) !important;
+    border-radius: 12px !important;
+    color: #E2E8F0 !important;
+}
+
+/* Progress bar */
+div[data-testid="stProgressBar"] > div > div {
+    background: linear-gradient(90deg, #0ea5e9, #06b6d4) !important;
+    border-radius: 99px;
+}
+
+/* Tabs */
+button[data-baseweb="tab"] {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    color: #94a3b8 !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: #38bdf8 !important;
+    border-bottom-color: #38bdf8 !important;
+}
+
+/* Divider */
+hr { border-color: rgba(99, 102, 241, 0.12) !important; }
+
+/* Code blocks */
+.stCode, code {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border: 1px solid rgba(99, 102, 241, 0.15) !important;
+    border-radius: 10px !important;
+    color: #7dd3fc !important;
+}
+
+/* Metric cards */
+div[data-testid="stMetric"] {
+    background: linear-gradient(135deg, rgba(14,165,233,0.07), rgba(6,182,212,0.07));
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(14, 165, 233, 0.18);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+div[data-testid="stMetric"]:hover {
+    border: 1px solid rgba(14, 165, 233, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.12);
+}
+
+img {
+    filter: drop-shadow(0 0 12px rgba(14, 165, 233, 0.4));
+}
